@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render 
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views.generic import ListView, CreateView, UpdateView,DeleteView, DetailView
 # Create your views here.
 from .models import Nota
 from .forms import NotaForm
+# asdasd
 
 class NotaListView(ListView):
     model = Nota
