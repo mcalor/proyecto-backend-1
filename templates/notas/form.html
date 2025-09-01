@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{% if object %}Editar{% else %}Crear{% endif %}
+Nota{% endblock %}
+{% block content %}
+ <h2>{% if object %}Editar{% else %}Crear{% endif %} Nota</h2>
+ <form method="post" novalidate>
+ {% csrf_token %}
+ <div class="form-group">
+ {{ form.non_field_errors }}
+ <div class="field">{{ form.titulo.label_tag }} {{ form.titulo
+}} {{ form.titulo.errors }}</div>
+ <div class="field">{{ form.contenido.label_tag }} {{
+form.contenido }} {{ form.contenido.errors }}</div>
+ </div>
+ <button type="submit">{% if object %}Guardar cambios{% else
+%}Crear{% endif %}</button>
+ <a href="{% url 'lista-notas' %}">Cancelar</a>
+ </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ nota.titulo }} | Demo Notas{% endblock %}
+{% block content %}
+ <article>
+ <h2>{{ nota.titulo }}</h2>
+ <p><small>{{ nota.creada|date:"d/m/Y H:i" }}</small></p>
+ <p>{{ nota.contenido|linebreaks }}</p>
+ <p>
+ <a href="{% url 'editar-nota' nota.id %}">Editar</a> ·
+ <a href="{% url 'eliminar-nota' nota.id %}">Eliminar</a> ·
+ <a href="{% url 'lista-notas' %}">← Volver</a>
+ </p>
+ </article>
+{% endblock %}

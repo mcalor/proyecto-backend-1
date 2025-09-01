@@ -1,0 +1,10 @@
+body { font-family: system-ui, sans-serif; margin: 2rem; }
+header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+nav a { text-decoration: none; }
+ul.messages { list-style: none; padding: 0; margin: 1rem 0; }
+.message { padding: .5rem .75rem; border-radius: .5rem; background:
+#eef; display: inline-block; }
+.message.success { background: #e6ffed; }
+.form-group .field { margin-bottom: .75rem; }
+input[type="text"], textarea { width: 100%; max-width: 720px; }
+button { cursor: pointer; }

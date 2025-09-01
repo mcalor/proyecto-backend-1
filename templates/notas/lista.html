@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Listado | Demo Notas{% endblock %}
+{% block content %}
+ <h2>Notas</h2>
+ <ul>
+ {% for n in notas %}
+ <li>
+ <a href="{% url 'detalle-nota' n.id %}">{{ n.titulo }}</a>
+ <small> · {{ n.creada|date:"d/m/Y H:i" }}</small>
+ — <a href="{% url 'editar-nota' n.id %}">Editar</a>
+ — <a href="{% url 'eliminar-nota' n.id %}">Eliminar</a>
+ </li>
+ {% empty %}
+ <li>No hay notas aún. <a href="{% url 'crear-nota' %}">Crea la
+primera</a>.</li>
+ {% endfor %}
+ </ul>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8">
+ <title>{% block title %}Demo Notas{% endblock %}</title>
+ <meta name="viewport" content="width=device-width, initialscale=1">
+ {% load static %}
+ <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+ <header>
+ <h1><a href="{% url 'lista-notas' %}">Demo Notas</a></h1>
+ <nav><a href="{% url 'crear-nota' %}"> Nueva Nota</a></nav>
+ </header>
+ {% if messages %}
+{#<ul class="messages"></ul>#}
+ {% for message in messages %}
+ <li class="message {{ message.tags }}">{{ message }}</li>
+ {% endfor %}
+ </ul>
+ {% endif %}
+ <main>
+ {% block content %}{% endblock %}
+ </main>
+</body>
+</html>
